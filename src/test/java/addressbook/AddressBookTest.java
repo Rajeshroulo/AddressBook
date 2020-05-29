@@ -4,25 +4,24 @@ import  org.junit.Assert;
 import org.junit.Test;
 
 public class AddressBookTest {
+    AddressBook addressBook = new AddressBook();
 
     @Test
     public void givenPersonDetails_WhenAddedToAddressBook_ShouldReturnCorrectSize(){
-        AddressBook addressBook = new AddressBook();
         addressBook.add("Rajeshkumar","Roulo","Ichapuram","Srikakulam","A.P",
                 "532312","9542048044");
-        int size = addressBook.addressBookList.size();
+        int size = addressBook.addressBook.size();
         Assert.assertEquals(1,size);
     }
 
     @Test
     public void givenPersonDetails_WhenRemovedFromAddressBook_ShouldReturnCorrectSize( ){
-        AddressBook addressBook = new AddressBook();
         addressBook.add("Rajeshkumar","Roulo","Ichapuram","Srikakulam","A.P",
                 "532312","9542048044");
         addressBook.add("Harish","Roulo","Ichapuram","Srikakulam","A.P",
                 "532312","9000341456");
-        addressBook.addressBookList.remove(1);
-        int size = addressBook.addressBookList.size();
+        addressBook.addressBook.remove(1);
+        int size = addressBook.addressBook.size();
         Assert.assertEquals(1,size);
     }
 
@@ -43,5 +42,26 @@ public class AddressBookTest {
           boolean result = addressBook.search("Rajesh");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void givenPersonDetailsWithOneEmptyField_shouldReturnException() {
+        try {
+            addressBook.add("Rajesh", " ", "ichapuram", "Sklm", "A.P",
+                    "532312", "9542048044");
+        } catch (AddressBookException e){
+            Assert.assertEquals(AddressBookException.ExceptionType.ENTERED_EMPTY,e.type);
+        }
+    }
+
+    @Test
+    public void givenPersonDetailsWithAllEmptyFields_shouldReturnException() {
+        try {
+            addressBook.add("", "", "", "", "",
+                    "", "");
+        } catch (AddressBookException e){
+            Assert.assertEquals(AddressBookException.ExceptionType.ENTERED_EMPTY,e.type);
+        }
+    }
+
 
 }
