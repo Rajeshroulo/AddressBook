@@ -34,7 +34,19 @@ public class AddressBook {
                 return i;
         }
         return -1;
+    }
 
+    public void edit(String oldPhoneNumber,String address,String city,String state,String zip,String newPhoneNumber) {
+        if(oldPhoneNumber == "" || address == "" || city == "" || state == ""|| zip == "" || newPhoneNumber == "")
+            throw new AddressBookException(AddressBookException.ExceptionType.ENTERED_EMPTY,"Entered Empty");
+        int index = this.getIndex(oldPhoneNumber);
+        if(index == -1)
+            throw new AddressBookException(AddressBookException.ExceptionType.NOT_EXISTING,"Not existing data");
+        addressBook.get(index).setAddress(address);
+        addressBook.get(index).setCity(city);
+        addressBook.get(index).setState(state);
+        addressBook.get(index).setZip(zip);
+        addressBook.get(index).setPhoneNumber(newPhoneNumber);
     }
 
 }

@@ -76,4 +76,39 @@ public class AddressBookTest {
         }
     }
 
+    @Test
+    public void givenPersonsDetails_whenReqiuredDataisNotFound_shouldReturnNegativeValue() {
+        addressBook.add("rajesh","raval","ichapuram","sklm","a.p",
+                "536872","9736327872");
+        addressBook.add("mahesh","kumar","berhampur","berhampur","odisha",
+                "513867","6325767347");
+         int result = addressBook.getIndex("6325764352");
+        Assert.assertEquals(-1,result);
     }
+
+    @Test
+    public void givenPersonsDetails_whenDetailsEdited_shouldReturnEditedValues() {
+        addressBook.add("mahesh","kumar","berhampur","berhampur","odisha",
+                "513867","6325767347");
+        addressBook.add("rajesh","kumar","ichapuram","sklm","a.p",
+                "513867","6325767345");
+        addressBook.edit("6325767347","ichapuram","udayagiri","odisha","532313",
+                "7788008818");
+        String address = addressBook.addressBook.get(1).getAddress();
+        Assert.assertEquals("ichapuram",address);
+        int result = addressBook.getIndex("7788008818");
+        Assert.assertEquals(0,result);
+    }
+
+    @Test
+    public void givenPersonsDetails_whenDetailsEdited_shouldNotReturnPastValues() {
+        addressBook.add("mahesh","raval","ram nagar","hyderabad","Telangana",
+                "536872","983637289");
+        addressBook.add("rajesh","roulo","subhash nagar","hyderabad","Telangana",
+                "513867","6387283638");
+        addressBook.edit("6387283638","Nizampet","Secunderabad","Telangana","523648",
+                "7788008818");
+        String city = addressBook.addressBook.get(1).getCity();
+        Assert.assertNotEquals("hyderabad",city);
+    }
+}
