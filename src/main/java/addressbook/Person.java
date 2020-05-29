@@ -8,20 +8,20 @@ public class Person {
         String city;
         String state;
         String zip;
-        String phone;
+        String phoneNumber;
 
         public Person() {
         }
 
         public Person(String firstName, String lastName, String address, String city, String state, String zip,
-                      String phone) {
+                      String phoneNumber) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.address = address;
             this.city = city;
             this.state = state;
             this.zip = zip;
-            this.phone = phone;
+            this.phoneNumber = phoneNumber;
         }
 
         public String getFirstName() {
@@ -48,8 +48,8 @@ public class Person {
             return this.zip;
         }
 
-        public String getPhone() {
-            return this.phone;
+        public String getPhoneNumber() {
+            return this.phoneNumber;
         }
 
 }

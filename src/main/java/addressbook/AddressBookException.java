@@ -3,7 +3,7 @@ package addressbook;
 public class AddressBookException extends RuntimeException {
 
     enum ExceptionType {
-        ENTERED_EMPTY,
+        ENTERED_EMPTY,EXISTING,
         NULL
     }
 

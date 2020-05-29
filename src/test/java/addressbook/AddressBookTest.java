@@ -26,20 +26,20 @@ public class AddressBookTest {
     }
 
     @Test
-    public void givenPersonsDetailsSearchedByName_whenFound_shouldReturnTrue() {
+    public void givenPersonsDetailsSearchedByNumber_whenFound_shouldReturnTrue() {
         AddressBook addressBook = new AddressBook();
         addressBook.add("Raj","purohit","Jaipur","Jaipur","Rajasthan",
                 "560008","9363675348");
-        boolean result = addressBook.search("Raj");
+        boolean result = addressBook.search("9363675348");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenPersonsDetailsSearchedName_whenNotFound_shouldReturnFalse() {
+    public void givenPersonsDetailsSearchedByName_whenNotFound_shouldReturnFalse() {
         AddressBook addressBook = new AddressBook();
         addressBook.add("Raj","Raval","Musheerabad","Hyderabad","Telangana",
                 "456132","9354675354");
-          boolean result = addressBook.search("Rajesh");
+          boolean result = addressBook.search("9363675348");
         Assert.assertFalse(result);
     }
 
@@ -63,5 +63,17 @@ public class AddressBookTest {
         }
     }
 
+    @Test
+    public void givenPersonDetails_whenTwoPersonsHaveSameNumber_shouldThrowAnException() {
+        try {
+        addressBook.add("Rajesh", "raval", "Begumpet ", "Hyderabad", "Telangana",
+                "560007", "9542048044");
+        addressBook.add("Harish", "Roulo", "Medchal", "Hyderabad", "Telangana ",
+                "560006", "9542048044");
 
-}
+        } catch (AddressBookException e) {
+            Assert.assertEquals(AddressBookException.ExceptionType.EXISTING, e.type);
+        }
+    }
+
+    }

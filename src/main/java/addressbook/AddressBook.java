@@ -3,25 +3,38 @@ package addressbook;
 import java.util.*;
 
 public class AddressBook {
-    List<Person> addressBook = new ArrayList<Person>();
+    List<Person> addressBook = new ArrayList< >();
 
     public void add(String firstName, String lastName, String address, String city, String state, String zip,
-                    String phone) {
+                    String phoneNumber) {
         if(firstName == "" || lastName == "" || address == "" || city == "" || state == ""|| zip == "" ||
-                phone == "")
+                phoneNumber == "")
             throw new AddressBookException(AddressBookException.ExceptionType.ENTERED_EMPTY,"Entered Empty");
 
-        Person person = new Person(firstName, lastName, address, city, state, zip, phone);
+        int index = this.getIndex(phoneNumber);
+        if(index != -1)
+            throw new AddressBookException(AddressBookException.ExceptionType.EXISTING,"Entered already existing data");
+        Person person = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
         addressBook.add(person);
     }
 
-    public boolean search(String firstName) {
-        for (int i=0;i<addressBook.size();i++) {
-            String name = addressBook.get(i).firstName;
-            if (name.equals(firstName))
+    public boolean search(String phoneNumber) {
+        for (Person person : addressBook) {
+               String name = person.phoneNumber;
+            if (name.equals(phoneNumber))
                 return true;
         }
         return false;
+    }
+
+    public int getIndex(String phoneNumber) {
+        for (int i = 0; i < addressBook.size(); i++) {
+            String Number = addressBook.get(i).phoneNumber;
+            if (Number.equals(phoneNumber))
+                return i;
+        }
+        return -1;
+
     }
 
 }
