@@ -2,6 +2,7 @@ package addressbook;
 
 import  org.junit.Assert;
 import org.junit.Test;
+import java.util.List;
 
 public class AddressBookTest {
     AddressBook addressBook = new AddressBook();
@@ -123,6 +124,16 @@ public class AddressBookTest {
         Assert.assertEquals(false,result);
     }
 
-
+    @Test
+    public void givenPersonsDetails_whenSortedByFirstName_shouldReturnDataInSortedOrder() {
+        addressBook.add("rajesh","roulo","marthahalli","banagalore","karnataka",
+                "560007","9542048044");
+        addressBook.add("mahesh","roulo","adarsh nagar","berhampur","odisha",
+                "760002","7788008818");
+        addressBook.add("harish","roulo","medcah","hyderabad","Telangana",
+                "500004","9000341456");
+        List<Person> sortPersonData = addressBook.sortPersonData();
+        Assert.assertEquals("harish", sortPersonData.get(0).firstName);
+    }
 
 }

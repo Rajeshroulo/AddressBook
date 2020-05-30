@@ -1,9 +1,13 @@
 package addressbook;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 
 public class AddressBook {
     List<Person> addressBook = new ArrayList< >();
+
+    Comparator<Person> comparator = Comparator.comparing(person -> person.firstName);
 
     public void add(String firstName, String lastName, String address, String city, String state, String zip,
                     String phoneNumber) {
@@ -58,5 +62,15 @@ public class AddressBook {
         addressBook.remove(index);
     }
 
-
+    public List<Person> sortPersonData() {
+        List<Person> sortedAddressBookData = addressBook.stream()
+                .sorted(comparator)
+                .collect(Collectors.toList());
+        return sortedAddressBookData;
+    }
 }
+
+
+
+
+
