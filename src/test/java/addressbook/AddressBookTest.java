@@ -111,4 +111,18 @@ public class AddressBookTest {
         String city = addressBook.addressBook.get(1).getCity();
         Assert.assertNotEquals("hyderabad",city);
     }
+
+    @Test
+    public void givenPersonsDetails_whenDeleted_shouldReturnNegativeIndexValue() {
+        addressBook.add("Rajesh","raval","gangaputra colony","hyderabad","Telangana",
+                "536872","9542048044");
+        addressBook.add("raj","roulo","Uppal","hyderabad","Telangana",
+                "513867","8074453962");
+        addressBook.delete("9542048044");
+        boolean result = addressBook.search("9542048044");
+        Assert.assertEquals(false,result);
+    }
+
+
+
 }
