@@ -150,4 +150,15 @@ public class AddressBookTest {
         Assert.assertEquals("760002", sortPersonDataAccordingToZip.get(2).zip);
     }
 
+    @Test
+    public void givenPersonsDetails_whenPrintMethodCalled_shouldPrintPersonDetails(){
+        addressBook.add("rajesh","roulo","marthahalli","banagalore","karnataka",
+                "560007","9542048044");
+        addressBook.add("mahesh","roulo","adarsh nagar","berhampur","odisha",
+                "760002","7788008818");
+        addressBook.add("harish","roulo","medcah","hyderabad","Telangana",
+                "500004","9000341456");
+        addressBook.print();
+    }
+
 }
