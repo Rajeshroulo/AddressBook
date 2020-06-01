@@ -11,7 +11,7 @@ public class AddressBookTest {
     public void givenPersonDetails_WhenAddedToAddressBook_ShouldReturnCorrectSize(){
         addressBook.add("Rajeshkumar","Roulo","Ichapuram","Srikakulam","A.P",
                 "532312","9542048044");
-        int size = addressBook.addressBook.size();
+        int size = addressBook.personsList.size();
         Assert.assertEquals(1,size);
     }
 
@@ -21,8 +21,8 @@ public class AddressBookTest {
                 "532312","9542048044");
         addressBook.add("Harish","Roulo","Ichapuram","Srikakulam","A.P",
                 "532312","9000341456");
-        addressBook.addressBook.remove(1);
-        int size = addressBook.addressBook.size();
+        addressBook.personsList.remove(1);
+        int size = addressBook.personsList.size();
         Assert.assertEquals(1,size);
     }
 
@@ -95,7 +95,7 @@ public class AddressBookTest {
                 "513867","6325767345");
         addressBook.edit("6325767347","ichapuram","udayagiri","odisha","532313",
                 "7788008818");
-        String address = addressBook.addressBook.get(1).getAddress();
+        String address = addressBook.personsList.get(1).getAddress();
         Assert.assertEquals("ichapuram",address);
         int result = addressBook.getIndex("7788008818");
         Assert.assertEquals(0,result);
@@ -109,7 +109,7 @@ public class AddressBookTest {
                 "513867","6387283638");
         addressBook.edit("6387283638","Nizampet","Secunderabad","Telangana","523648",
                 "7788008818");
-        String city = addressBook.addressBook.get(1).getCity();
+        String city = addressBook.personsList.get(1).getCity();
         Assert.assertNotEquals("hyderabad",city);
     }
 
