@@ -5,11 +5,14 @@ import java.util.stream.Collectors;
 
 
 public class AddressBook {
+    enum CompareBy{
+        FIRST_NAME,
+        ZIP
+    }
+
     List<Person> addressBook = new ArrayList< >();
 
-    Comparator<Person> comparator = Comparator.comparing(person -> person.firstName);
-
-    public void add(String firstName, String lastName, String address, String city, String state, String zip,
+   public void add(String firstName, String lastName, String address, String city, String state, String zip,
                     String phoneNumber) {
         if(firstName == "" || lastName == "" || address == "" || city == "" || state == ""|| zip == "" ||
                 phoneNumber == "")
@@ -61,12 +64,10 @@ public class AddressBook {
             throw new AddressBookException(AddressBookException.ExceptionType.NOT_EXISTING,"Data not existing");
         addressBook.remove(index);
     }
-
-    public List<Person> sortPersonData() {
-        List<Person> sortedAddressBookData = addressBook.stream()
+    public List<Person> sortPersonData(Comparator<Person> comparator) {
+        return addressBook.stream()
                 .sorted(comparator)
                 .collect(Collectors.toList());
-        return sortedAddressBookData;
     }
 }
 

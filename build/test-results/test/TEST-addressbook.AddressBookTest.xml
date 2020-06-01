@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.AddressBookTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-30T06:29:38" hostname="LAPTOP-U0R5V4IK" time="0.009">
+<testsuite name="addressbook.AddressBookTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2020-06-01T05:10:35" hostname="LAPTOP-U0R5V4IK" time="0.026">
   <properties/>
-  <testcase name="givenPersonsDetails_whenSortedByFirstName_shouldReturnDataInSortedOrder" classname="addressbook.AddressBookTest" time="0.009"/>
+  <testcase name="givenPersonsDetails_whenSortedByZip_shouldReturnDataInSortedOrder" classname="addressbook.AddressBookTest" time="0.017"/>
+  <testcase name="givenPersonsDetails_whenDetailsEdited_shouldNotReturnPastValues" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonDetails_WhenRemovedFromAddressBook_ShouldReturnCorrectSize" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonsDetails_whenSortedByFirstName_shouldReturnDataInSortedOrder" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonsDetailsSearchedByNumber_whenFound_shouldReturnTrue" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonDetails_whenTwoPersonsHaveSameNumber_shouldThrowAnException" classname="addressbook.AddressBookTest" time="0.001"/>
+  <testcase name="givenPersonDetailsWithAllEmptyFields_shouldReturnException" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonsDetails_whenDetailsEdited_shouldReturnEditedValues" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonsDetails_whenDeleted_shouldReturnNegativeIndexValue" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonsDetails_whenReqiuredDataisNotFound_shouldReturnNegativeValue" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonDetails_WhenAddedToAddressBook_ShouldReturnCorrectSize" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonsDetailsSearchedByName_whenNotFound_shouldReturnFalse" classname="addressbook.AddressBookTest" time="0.0"/>
+  <testcase name="givenPersonDetailsWithOneEmptyField_shouldReturnException" classname="addressbook.AddressBookTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
