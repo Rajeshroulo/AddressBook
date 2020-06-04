@@ -97,4 +97,12 @@ public class AddressBookTest {
         }
     }
 
+    @Test
+    public void givenPersonsDetails_whenPrintInvoked_shouldReturnDataInSortedOrder() {
+        List<Person> sortPersonDataAccordingToZip = addressBook.sortPersonData(new Comparators()
+                .getComparator(AddressBook.CompareBy.ZIP),"AddressBook1");
+        Assert.assertEquals("500004", sortPersonDataAccordingToZip.get(0).zip);
+    }
+
 }
+

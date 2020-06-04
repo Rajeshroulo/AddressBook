@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.AddressBookTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2020-06-04T05:24:46" hostname="LAPTOP-U0R5V4IK" time="0.123">
+<testsuite name="addressbook.AddressBookTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-04T15:08:06" hostname="LAPTOP-U0R5V4IK" time="0.087">
   <properties/>
-  <testcase name="givenPersonsDetails_whenSortedByZip_shouldReturnDataInSortedOrder" classname="addressbook.AddressBookTest" time="0.087"/>
-  <testcase name="givenPersonDetails_WhenRemovedFromAddressBook_ShouldReturnCorrectSize" classname="addressbook.AddressBookTest" time="0.005"/>
-  <testcase name="givenPersonsDetails_whenSortedByFirstName_shouldReturnDataInSortedOrder" classname="addressbook.AddressBookTest" time="0.002"/>
-  <testcase name="givenPersonsDetailsSearchedByNumber_whenFound_shouldReturnTrue" classname="addressbook.AddressBookTest" time="0.003"/>
-  <testcase name="givenPersonDetails_whenTwoPersonsHaveSameNumber_shouldThrowAnException" classname="addressbook.AddressBookTest" time="0.003"/>
-  <testcase name="givenPersonDetailsWithAllEmptyFields_shouldReturnException" classname="addressbook.AddressBookTest" time="0.0"/>
-  <testcase name="givenPersonDetails_WhenAddedToAddressBook_ShouldReturnCorrectSize" classname="addressbook.AddressBookTest" time="0.002"/>
-  <testcase name="givenPersonsDetails_whenPrintMethodCalled_shouldPrintPersonDetails" classname="addressbook.AddressBookTest" time="0.009"/>
-  <testcase name="givenPersonsDetailsSearchedByName_whenNotFound_shouldReturnFalse" classname="addressbook.AddressBookTest" time="0.003"/>
-  <testcase name="givenPersonDetailsWithOneEmptyField_shouldReturnException" classname="addressbook.AddressBookTest" time="0.002"/>
-  <testcase name="editedPersonDetails_whenEdited_shouldReturnModifiedPersonDetails" classname="addressbook.AddressBookTest" time="0.002"/>
-  <system-out><![CDATA[Person{firstName='Rajesh', lastName='Roulo', address='Ichapuram', city='Srikakulam', state='AndhraPradesh', zip='532312', phoneNumber='9542048044'}
-Person{firstName='Mahesh', lastName='Roulo', address='Adarsh nagar', city='Berhampur', state='Odisha', zip='760002', phoneNumber='7788008818'}
-Person{firstName='Harish', lastName='Roulo', address='Medchal', city='Hyderabad', state='Telangana', zip='500004', phoneNumber='9000341456'}
-Person{firstName='Sunil', lastName='Roulo', address='Hathibali', city='Udayagiri', state='Odisha', zip='762100', phoneNumber='9668183833'}
-]]></system-out>
+  <testcase name="givenPersonsDetails_whenPrintInvoked_shouldReturnDataInSortedOrder" classname="addressbook.AddressBookTest" time="0.087"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
