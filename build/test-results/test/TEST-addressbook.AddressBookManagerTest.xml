@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.AddressBookManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-04T04:48:56" hostname="LAPTOP-U0R5V4IK" time="0.003">
-  <properties/>
-  <testcase name="givenAddressBookName_whenExisting_shouldThrowException" classname="addressbook.AddressBookManagerTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
