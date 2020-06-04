@@ -30,11 +30,13 @@ public class AddressBook {
     }
 
     public boolean search(String addressBookName,String phoneNumber) {
-        personsList = fileOperations.loadDataFromFile(addressBookName);
-        for (Person person : personsList) {
-               String name = person.phoneNumber;
-            if (name.equals(phoneNumber))
-                return true;
+        if(!fileOperations.isEmpty(addressBookName)) {
+            personsList = fileOperations.loadDataFromFile(addressBookName);
+            for (Person person : personsList) {
+                String name = person.phoneNumber;
+                if (name.equals(phoneNumber))
+                    return true;
+            }
         }
         return false;
     }

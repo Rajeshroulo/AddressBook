@@ -25,4 +25,13 @@ public class AddressBookManagerTest {
         }
     }
 
+    @Test
+    public void givenEnteredDetails_whenAdded_shouldAddToAddressBook() {
+        try {
+            addressBookManager.add("AddressBook1","","","","","","","");
+        } catch (AddressBookException e){
+            Assert.assertEquals(AddressBookException.ExceptionType.ENTERED_EMPTY,e.type);
+        }
+    }
+
 }
