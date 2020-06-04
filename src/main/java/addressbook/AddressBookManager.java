@@ -35,12 +35,20 @@ public class AddressBookManager {
         fileOperations.deleteFile(addressBook);
     }
 
+    public void deletePersonDetails(String addressBookName,String phoneNumber){
+        addressBook.delete(addressBookName,phoneNumber);
+    }
+
     public int loadAddressBooks(){
         return fileOperations.loadFiles();
     }
 
     public void printBookEntries(String addressBookName){
         addressBook.print(addressBookName);
+    }
+
+    public void saveAs(String bookName,String newBookName) throws AddressBookException, IOException {
+        fileOperations.copy(bookName,newBookName);
     }
 
 }

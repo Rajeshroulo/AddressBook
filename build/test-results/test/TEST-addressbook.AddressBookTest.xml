@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.AddressBookTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-04T15:08:06" hostname="LAPTOP-U0R5V4IK" time="0.087">
-  <properties/>
-  <testcase name="givenPersonsDetails_whenPrintInvoked_shouldReturnDataInSortedOrder" classname="addressbook.AddressBookTest" time="0.087"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

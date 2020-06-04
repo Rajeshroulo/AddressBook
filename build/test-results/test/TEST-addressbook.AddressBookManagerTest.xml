@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="addressbook.AddressBookManagerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-06-04T15:29:21" hostname="LAPTOP-U0R5V4IK" time="0.498">
+  <properties/>
+  <testcase name="givenAddressBookName_whenNotExisting_shouldCreateNewFile" classname="addressbook.AddressBookManagerTest" time="0.468"/>
+  <testcase name="givenAddressBookName_whenExisting_shouldThrowException" classname="addressbook.AddressBookManagerTest" time="0.002"/>
+  <testcase name="givenLoadAddressBooks_whenLoaded_shouldReturnNumberOfFiles" classname="addressbook.AddressBookManagerTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
